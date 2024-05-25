@@ -1,0 +1,22 @@
+﻿{
+  "V4Url": "https://ipv4.ip.mir6.com",
+  "V6Url": "https://ipv6.ip.mir6.com",
+  "EndPoint": "https://alidns.cn-hangzhou.aliyuncs.com",
+  "Interval": 600,
+  "KeyId": "",
+  "KeySecret": "",
+  "Domains": [
+    {
+      "DomainName": "",
+      "V4Enable": true,
+      "V6Enable": true
+    }
+  ],
+  "SubDomains": [
+    {
+      "DomainName": "",
+      "V4Enable": true,
+      "V6Enable": true
+    }
+  ]
+}
