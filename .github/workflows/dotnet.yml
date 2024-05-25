@@ -18,6 +18,6 @@ jobs:
     - name: login
       run: docker login -u ${{ secrets.ALIYUN_USERNAME }} -p ${{ secrets.ALIYUN_PWD }} ${{ secrets.ALIYUN_REPO }}
     - name: tag
-      run: docker tag aliyun-ddns  ${{ secrets.ALIYUN_DOCKER_REPO }}
+      run: docker tag aliyun-ddns-image  ${{ secrets.ALIYUN_DOCKER_REPO }}
     - name: push
       run: docker push ${{ secrets.ALIYUN_DOCKER_REPO }}:${{ github.run_id }}
