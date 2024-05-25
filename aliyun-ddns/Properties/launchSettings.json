@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "aliyun-ddns": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
