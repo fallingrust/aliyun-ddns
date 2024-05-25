@@ -18,6 +18,6 @@ jobs:
     - name: login
       run: docker login -u ${{ secrets.ALIYUN_USERNAME }} -p ${{ secrets.ALIYUN_PWD }} ${{ secrets.ALIYUN_REPO }}
     - name: tag
-      run: docker tag ${{ github.sha }} ${{ secrets.ALIYUN_DOCKER_REPO }}:${{ github.run_id }}
+      run: docker tag latest ${{ secrets.ALIYUN_DOCKER_REPO }}:${{ github.run_id }}
     - name: push
       run: docker push ${{ secrets.ALIYUN_DOCKER_REPO }}:${{ github.run_id }}
