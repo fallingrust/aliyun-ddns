@@ -11,11 +11,15 @@
 [![MIT License][license-shield]][license-url]
 
 ### 配置
-``` sh
+
+```sh
+ mkdir config
  docker pull registry.cn-hangzhou.aliyuncs.com/xuejianchen/aliyun-ddns:lastest
- docker run -d --name aliyun-ddns 
+ docker run -d --name aliyun-ddns --network host -v config:/ddns/config registry.cn-hangzhou.aliyuncs.com/xuejianchen/aliyun-ddns:lastest
 ```
-根目录下生成config.json文件，或直接运行一次：
+
+修改配置文件
+
 ```json
 {
   "V4Url": "https://ipv4.ip.mir6.com",
