@@ -52,7 +52,7 @@ namespace aliyun_ddns
                 Log.Error($"KeySecret is null~");
                 return;
             }
-            AliyunSDK.DNS.AliyunDNS.Configure(new AliyunDns.Core.Option()
+            AliyunDNS.Configure(new AliyunDns.Core.Option()
             {
                 EndPoint = _config.EndPoint,
                 KeyId = _config.KeyId,
@@ -120,7 +120,8 @@ namespace aliyun_ddns
                         {
                             Log.Information($"update {record.DomainName} {record.RR} {record.Value}->{ipv4}");
 
-                            await AliyunDNS.UpdateDomainRecordAsync(record, ipv4);
+                         await AliyunDNS.UpdateDomainRecordAsync(record, ipv4);
+                            
                         }
                         else
                         {
@@ -177,7 +178,8 @@ namespace aliyun_ddns
                         if (!string.IsNullOrWhiteSpace(ipv4) && record.Value != ipv4)
                         {
                             Log.Information($"update {record.DomainName} {record.RR} {record.Value}->{ipv4}");
-                            await AliyunDNS.UpdateDomainRecordAsync(record, ipv4);
+                            var updateResponse = await AliyunDNS.UpdateDomainRecordAsync(record, ipv4);
+                            Log.Information($"updateResponse {updateResponse.RecordId}");
                         }
                         else
                         {
@@ -190,6 +192,7 @@ namespace aliyun_ddns
                         {
                             Log.Information($"update {record.DomainName} {record.RR} {record.Value}->{ipv6}");
                             var updateResponse = await AliyunDNS.UpdateDomainRecordAsync(record, ipv6);
+                            Log.Information($"updateResponse {updateResponse.RecordId}");
                         }
                         else
                         {
