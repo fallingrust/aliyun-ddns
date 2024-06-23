@@ -14,8 +14,8 @@
 
 ```sh
  mkdir config
- docker pull registry.cn-hangzhou.aliyuncs.com/xuejianchen/aliyun-ddns:lastest
- docker run -d --name aliyun-ddns --network host -v config:/ddns/config registry.cn-hangzhou.aliyuncs.com/xuejianchen/aliyun-ddns:lastest
+ docker pull registry.cn-hangzhou.aliyuncs.com/xuejianchen/aliyun-ddns:v0.0.0.3
+ docker run -d --name aliyun-ddns --network host -v $PWD/config:/ddns/config registry.cn-hangzhou.aliyuncs.com/xuejianchen/aliyun-ddns:v0.0.0.3
 ```
 
 修改配置文件
